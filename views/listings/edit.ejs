@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+<div class="col-8 offset-2">
+    <h3>Edit your listing</h3>
+    <form method="POST" action="/listings/<%=updatelisting.id%>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" value="<%=updatelisting.title%>" type="string" class="form-control" required>
+        <div class="valid-feedback">Looks Good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" class="form-control" required><%=updatelisting.description%></textarea>
+        <div class="invalid-feedback">Please Provide Description</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+        <input name="listing[image]" value="<%=updatelisting.image%>" type="string" class="form-control" required>
+        <div class="invalid-feedback">Please Provide URL/div>
+        </div>
+
+        <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+        <input name="listing[price]" value="<%=updatelisting.price%>" type="number" class="form-control" required>
+        <div class="invalid-feedback">Please Provide Price</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+        <input name="listing[country]" value="<%=updatelisting.country%>" type="string" class="form-control" required>
+        <div class="invalid-feedback">Please Provide Country Name</div>
+        </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+        <input name="listing[location]" value="<%=updatelisting.location%>" type="string" class="form-control" required>
+        <div class="invalid-feedback">Please Provide location</div>
+        </div>
+
+        <button class="btn btn-dark edit-btn mt-3">Edit</button>
+    </form>
+    </div>
+    </div>
+
